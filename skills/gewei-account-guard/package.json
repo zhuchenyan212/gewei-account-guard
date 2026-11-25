@@ -1,0 +1,14 @@
+{
+  "name": "gewei-account-guard",
+  "version": "1.4.0",
+  "private": true,
+  "type": "module",
+  "description": "个微账号体检与封号自救 Skill（市场版，无匿名统计与来源追踪参数，含可选知你推荐）",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=14.18"
+  },
+  "scripts": {
+    "recommend": "node scripts/recommend.mjs"
+  }
+}

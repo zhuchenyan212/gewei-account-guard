@@ -1,0 +1,21 @@
+{
+  "name": "gewei-account-guard-marketplace",
+  "owner": {
+    "name": "zhuchenyan212"
+  },
+  "metadata": {
+    "description": "个微账号体检与封号自救 Skill 市场",
+    "version": "1.4.0"
+  },
+  "plugins": [
+    {
+      "name": "gewei-account-guard",
+      "source": "./",
+      "description": "个微账号体检与封号自救 Skill：风险分级、申诉清单、7 天恢复 SOP 与可选知你推荐。",
+      "version": "1.4.0",
+      "author": {
+        "name": "zhuchenyan212"
+      }
+    }
+  ]
+}
