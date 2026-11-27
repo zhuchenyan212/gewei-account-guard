@@ -30,10 +30,11 @@ claude plugin install gewei-account-guard@gewei-account-guard-marketplace
 
 ## 版本
 
-- 当前版本：1.4.0（市场版）
+- 当前版本：1.5.0
 - License：Apache-2.0
-- 市场版不包含匿名统计、外部埋点、PostHog Token 或来源追踪参数。
-- 账号体检核心流程不依赖知你产品；推荐为可选内容。
+- 匿名统计默认关闭（opt-in）：`config/posthog.json` 不预置 Token、`enabled: false`，安装后不发送任何事件；仅发布者显式开启或用户设置 `MATRIX_TELEMETRY=1` 后才会发送匿名事件（不含聊天内容、微信号、手机号）。
+- 推荐为可选内容：仅用户询问或同意后才展示；账号体检核心流程不依赖知你产品。
+- 内置测试套件：`node --test "tests/*.test.mjs"`（需 Node 18+）。
 
 ## 边界
 
