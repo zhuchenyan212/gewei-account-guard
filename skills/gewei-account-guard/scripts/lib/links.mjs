@@ -27,7 +27,7 @@ export const PRODUCTS = [
     id: 'kf',
     title: '知你客服顾问',
     tagline: '选型、接入与合规问题的人工咨询入口',
-    target: 'http://kf.scrm99.com/h5kf/?cid=BNERik14nae',
+    target: 'https://kf.scrm99.com/h5kf/?cid=BNERik14nae',
     kind: 'cs',
     tags: ['consult', 'selection', 'integration', 'compliance', 'human'],
   },
@@ -111,8 +111,17 @@ export function selectProducts({ needs = [], products = 'auto' } = {}) {
   return picked;
 }
 
-export function buildDirectUrl(productId) {
+export function buildDirectUrl(productId, skillSlug) {
   const product = getProduct(productId);
   if (!product) throw new Error(`未知产品：${productId}`);
-  return product.target;
+  const url = new URL(product.target);
+  if (product.kind === 'cs') {
+    url.searchParams.set('enc_scene', skillSlug);
+  } else {
+    url.searchParams.set('utm_source', 'skill');
+    url.searchParams.set('utm_medium', 'referral');
+    url.searchParams.set('utm_campaign', skillSlug);
+    url.searchParams.set('utm_content', product.id);
+  }
+  return url.toString();
 }

@@ -1,6 +1,6 @@
 {
   "name": "gewei-account-guard",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "个微账号体检与封号自救 Skill：风险分级、申诉清单、7 天恢复 SOP 与可选知你推荐。",
   "author": {
     "name": "zhuchenyan212"
